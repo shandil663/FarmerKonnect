@@ -7,21 +7,8 @@
     android:background="@color/white"
     tools:context=".Onboardpage">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationViewon"
-        android:layout_width="349dp"
-        android:layout_height="247dp"
-        android:foregroundGravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/onboard" />
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,16 +37,28 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="413dp"
-        android:layout_height="570dp"
-        android:scrollbars="none"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="313dp"
+        android:layout_height="63dp"
+        android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animationViewon"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anim2" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/animationView"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,7 +95,7 @@
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/email1"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -143,7 +142,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/farmsize"
+                    android:id="@+id/farmsize1"
                     android:layout_width="300dp"
 
                     android:layout_height="wrap_content"
@@ -151,6 +150,67 @@
                     android:background="@drawable/customedit"
                     android:backgroundTint="@color/fade"
 
+                    android:ems="10"
+                    android:hint="Farm size in Acre"
+                    android:inputType="numberDecimal"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/people1"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
+                    android:ems="10"
+                    android:hint="No. of workers"
+                    android:inputType="phone"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/crops1"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
+                    android:drawablePadding="10sp"
+                    android:ems="10"
+                    android:hint="No. of crops grown"
+                    android:inputType="phone"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/soil1"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
+                    android:drawablePadding="10sp"
+                    android:ems="10"
+                    android:hint="Type of soil"
+                    android:inputType="text"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/farmsize"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
                     android:ems="10"
                     android:hint="Farm size in Acre"
                     android:inputType="numberDecimal"
@@ -252,35 +312,23 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/onbd"
-                    android:layout_width="200sp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="45dp"
-                    android:backgroundTint="@color/black"
-                    android:text="Create Account" />
-
-                <Button
-                    android:id="@+id/signinbtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:backgroundTint="@color/fade"
-                    android:text="Sign in"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-
         </LinearLayout>
 
 
     </ScrollView>
 
+    <Button
+        android:id="@+id/gohome"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="45dp"
+        android:backgroundTint="@color/black"
+        android:text="Create Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
 </androidx.constraintlayout.widget.ConstraintLayout>

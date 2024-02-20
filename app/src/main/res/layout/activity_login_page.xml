@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535">
+        app:layout_constraintVertical_bias="0.581">
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,31 +73,61 @@
             android:text="Login Credentials"
             android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5sp"
+                app:ccp_textGravity="CENTER"
+                app:ccp_textSize="17sp" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customedit"
+                android:backgroundTint="@color/fade"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:padding="20sp"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/getotp"
+            android:layout_width="250sp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/customedit"
-            android:backgroundTint="@color/fade"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:padding="20sp"
-            android:textSize="20sp"
-            android:textStyle="normal" />
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/black"
+            android:text="Request OTP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.781" />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="300dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15sp"
             android:background="@drawable/customedit"
             android:backgroundTint="@color/fade"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="OTP"
+            android:inputType="number"
             android:padding="20sp"
             android:textSize="20sp"
             android:textStyle="normal" />
@@ -116,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.833" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
