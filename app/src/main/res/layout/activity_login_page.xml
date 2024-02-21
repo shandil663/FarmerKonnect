@@ -85,11 +85,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="5sp"
-                app:ccp_textGravity="CENTER"
                 app:ccp_textSize="17sp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/mobile"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/customedit"
@@ -118,7 +117,7 @@
             app:layout_constraintVertical_bias="0.781" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/otphere"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -136,7 +135,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/onbd"
+        android:id="@+id/verify"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"

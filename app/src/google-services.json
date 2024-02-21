@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1049797911207",
+    "firebase_url": "https://farmerkonnect-9eb26-default-rtdb.firebaseio.com",
+    "project_id": "farmerkonnect-9eb26",
+    "storage_bucket": "farmerkonnect-9eb26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049797911207:android:b79d6a65b51ae1ca763182",
+        "android_client_info": {
+          "package_name": "com.example.farmerkonnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkyR2w0906MszF8JKhvtZkj5aycJ7lfXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

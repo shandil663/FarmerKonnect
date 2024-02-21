@@ -81,7 +81,6 @@
                 <EditText
                     android:id="@+id/username"
                     android:layout_width="300dp"
-
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/customedit"
@@ -95,7 +94,7 @@
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/email1"
+                    android:id="@+id/age"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -103,14 +102,28 @@
                     android:background="@drawable/customedit"
                     android:backgroundTint="@color/fade"
                     android:ems="10"
-                    android:hint="Phone"
+                    android:hint="Age"
+                    android:inputType="phone"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <EditText
+                    android:id="@+id/emailadd"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15sp"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
+                    android:ems="10"
+                    android:hint="Email[Optional]"
                     android:inputType="phone"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/pass"
+                    android:id="@+id/farmeradd"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -158,7 +171,7 @@
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/people1"
+                    android:id="@+id/locationfarm"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -166,8 +179,8 @@
                     android:background="@drawable/customedit"
                     android:backgroundTint="@color/fade"
                     android:ems="10"
-                    android:hint="No. of workers"
-                    android:inputType="phone"
+                    android:hint="Farm Location"
+                    android:inputType="textMultiLine"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />
@@ -198,25 +211,13 @@
                     android:backgroundTint="@color/fade"
                     android:drawablePadding="10sp"
                     android:ems="10"
-                    android:hint="Type of soil"
-                    android:inputType="text"
+                    android:hint="Type of Cultivation"
+                    android:inputType="textMultiLine"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />
 
-                <EditText
-                    android:id="@+id/farmsize"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/customedit"
-                    android:backgroundTint="@color/fade"
-                    android:ems="10"
-                    android:hint="Farm size in Acre"
-                    android:inputType="numberDecimal"
-                    android:padding="10sp"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
+
 
                 <EditText
                     android:id="@+id/people"
@@ -234,7 +235,7 @@
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/crops"
+                    android:id="@+id/livestocks"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -243,14 +244,14 @@
                     android:backgroundTint="@color/fade"
                     android:drawablePadding="10sp"
                     android:ems="10"
-                    android:hint="No. of crops grown"
-                    android:inputType="phone"
+                    android:hint="Livestocks [if any]"
+                    android:inputType="textMultiLine"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/soil"
+                    android:id="@+id/channel"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -259,8 +260,39 @@
                     android:backgroundTint="@color/fade"
                     android:drawablePadding="10sp"
                     android:ems="10"
-                    android:hint="Type of soil"
-                    android:inputType="text"
+                    android:hint="Primary Channel of Sales"
+                    android:inputType="textMultiLine"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/goal"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
+                    android:drawablePadding="10sp"
+                    android:ems="10"
+                    android:hint="Specific Goal"
+                    android:inputType="textMultiLine"
+                    android:padding="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+                <EditText
+                    android:id="@+id/tech"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/customedit"
+                    android:backgroundTint="@color/fade"
+                    android:drawablePadding="10sp"
+                    android:ems="10"
+                    android:hint="Does Farmer have smartphone/Internet"
+                    android:inputType="textMultiLine"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />
@@ -278,25 +310,25 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15sp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="Login Credentials"
+                    android:text="Knowledge Sharing"
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/interest"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/customedit"
                     android:backgroundTint="@color/fade"
                     android:ems="10"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
+                    android:hint="Topics of interest"
+                    android:inputType="textMultiLine"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/major"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -304,8 +336,8 @@
                     android:background="@drawable/customedit"
                     android:backgroundTint="@color/fade"
                     android:ems="10"
-                    android:hint="Password"
-                    android:inputType="textPassword"
+                    android:hint="Major Challenges"
+                    android:inputType="textMultiLine"
                     android:padding="10sp"
                     android:textSize="20sp"
                     android:textStyle="normal" />

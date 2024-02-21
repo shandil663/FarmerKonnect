@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".UserFargment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,5 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logoutcard"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="30dp"
+        android:backgroundTint="@color/fade"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:textColor="@color/green"
+            android:text="Logout"/>
+    </androidx.cardview.widget.CardView>
+
+
 
 </FrameLayout>
