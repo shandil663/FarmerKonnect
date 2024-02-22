@@ -105,10 +105,10 @@ public class LoginPage extends AppCompatActivity {
                         DatabaseReference ref=db.getReference("FarmersInfo");
                         FirebaseUser currentUser = mAuth.getCurrentUser();
                         if(currentUser != null){
-                            ref.child(currentUser.getUid()).child("farmername").addListenerForSingleValueEvent(new ValueEventListener() {
+                            ref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(snapshot.exists()){
+                                    if(snapshot.child(currentUser.getUid()).exists()){
                                         startActivity(new Intent(LoginPage.this,Home.class));
                                         finish();
                                     }

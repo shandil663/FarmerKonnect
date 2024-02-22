@@ -35,10 +35,10 @@ LottieAnimationView lottieAnimationView;
             public void run() {
 
                 if(currentUser != null){
-                    ref.child(currentUser.getUid()).child("farmername").addListenerForSingleValueEvent(new ValueEventListener() {
+                    ref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.exists()){
+                            if(snapshot.child(currentUser.getUid()).exists()){
                                 startActivity(new Intent(Splash.this,Home.class));
                                 finish();
                             }
@@ -55,10 +55,6 @@ LottieAnimationView lottieAnimationView;
                         }
                     });
 
-
-
-
-
                 }
                 else {
                     startActivity(new Intent(Splash.this,MainActivity.class));
@@ -67,6 +63,6 @@ LottieAnimationView lottieAnimationView;
 
 
             }
-        },5000);
+        },0);
     }
 }
