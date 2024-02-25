@@ -1,5 +1,6 @@
 package com.example.farmerkonnect;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -76,11 +78,13 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+ImageView asbuttondetect;
     TextView cityNameTextView, temperatureTextView, descriptionTextView, username;
     ImageView weatherIconImageView;
 
     String forusername;
+
+    LottieAnimationView lottieAnimationView;
 
     FirebaseAuth oth;
     FirebaseDatabase db;
@@ -144,7 +148,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
-
         username = rootView.findViewById(R.id.usernamehere);
         oth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -321,13 +324,19 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+asbuttondetect=view.findViewById(R.id.detect);
+asbuttondetect.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getActivity(), Diseasesdetection.class));
+    }
+});
         ImageSlider imageSlider = view.findViewById(R.id.imageslider);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.download1, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.download, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.images1, ScaleTypes.FIT));
-
+        slideModels.add(new SlideModel(R.drawable.yojna1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.yojna4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.yojn3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.yojna2, ScaleTypes.FIT));
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
 }

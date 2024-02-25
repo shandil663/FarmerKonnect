@@ -4,11 +4,17 @@
     android:id="@+id/home"
     android:title="Home"
     android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/chat"
+        android:title="Inbox"
+        android:icon="@drawable/chat"/>
 
     <item
-        android:id="@+id/sch"
-        android:title="Schemes"
-        android:icon="@drawable/tractor"/>
+        android:id="@+id/market"
+        android:title="Marketplace"
+        android:icon="@drawable/market"/>
+
+
 
     <item
         android:id="@+id/user"

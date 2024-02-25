@@ -33,6 +33,7 @@ android {
 
     buildFeatures {
         viewBinding =true
+        mlModelBinding = true
     }
 }
 
@@ -44,6 +45,9 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation("com.google.firebase:firebase-firestore:24.10.2")
+    implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.3.0")
     testImplementation("junit:junit:4.13.2")
     implementation("com.hbb20:ccp:2.7.0")
     implementation ("com.google.android.gms:play-services-location:21.1.0")
@@ -53,4 +57,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.airbnb.android:lottie:6.3.0")
+
+    implementation ("org.tensorflow:tensorflow-lite-support: 0.1.0-rc1")
+    implementation ("org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1")
 }
