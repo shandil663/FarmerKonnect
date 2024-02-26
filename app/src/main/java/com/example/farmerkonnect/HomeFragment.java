@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-ImageView asbuttondetect;
+ImageView asbuttondetect,price;
     TextView cityNameTextView, temperatureTextView, descriptionTextView, username;
     ImageView weatherIconImageView;
 
@@ -325,6 +325,13 @@ ImageView asbuttondetect;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 asbuttondetect=view.findViewById(R.id.detect);
+price=view.findViewById(R.id.price);
+price.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getActivity().getApplicationContext(), Pricecheck.class));
+    }
+});
 asbuttondetect.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
