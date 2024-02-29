@@ -1,64 +1,129 @@
-package com.example.farmerkonnect;
+package com.example.farmerkonnect;// ... imports ...
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link inbox#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 public class inbox extends Fragment {
+    private RecyclerView recyclerView;
+    private FarmerAdapter farmerAdapter;
+    private DatabaseReference usersRef;
+    private EditText searchEditText;
+    private FirebaseRecyclerOptions<DataModel> options;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // 1. Inflate the layout
+        View view = inflater.inflate(R.layout.fragment_inbox, container, false);
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+        // 2. Find the RecyclerView
+        recyclerView = view.findViewById(R.id.usersRecyclerView);
+        searchEditText = view.findViewById(R.id.searchEditText);
+        options = new FirebaseRecyclerOptions.Builder<DataModel>()
+                .setQuery(usersRef, DataModel.class)
+                .build();
+        // 3. Set layout manager for the RecyclerView
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-    public inbox() {
-        // Required empty public constructor
-    }
+        // 4. Get Firebase Database reference
+        usersRef = FirebaseDatabase.getInstance().getReference().child("FarmersInfo");
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment inbox.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static inbox newInstance(String param1, String param2) {
-        inbox fragment = new inbox();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        return view;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onStart() {
+        super.onStart();
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                searchUsers(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+        FirebaseRecyclerOptions<DataModel> options = new FirebaseRecyclerOptions.Builder<DataModel>()
+                .setQuery(usersRef, DataModel.class)
+                .build();
+
+        farmerAdapter = new FarmerAdapter(options); // Create FarmerAdapter class below
+        recyclerView.setAdapter(farmerAdapter);
+        farmerAdapter.startListening();
+
+        farmerAdapter.setOnItemClickListener(new FarmerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(DataModel dataModel, int position) {
+                searchEditText.setText("");
+                Intent chatIntent = new Intent(getContext(), ChatActivity.class);
+                chatIntent.putExtra("selected_user_id", dataModel.getUserid()); // Assuming you have a 'getUid' method
+                chatIntent.putExtra("selected_user_name", dataModel.getFarmername());
+                startActivity(chatIntent);
+            }
+        });
+
+
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inbox, container, false);
+    private void searchUsers(String searchQuery) {
+//        if (!searchQuery.isEmpty()) {
+//            Query query = usersRef.orderByChild("farmername")
+//                    .startAt(searchQuery)
+//                    .endAt(searchQuery + "\uf8ff");
+//
+//            FirebaseRecyclerOptions<DataModel> filteredOptions = new FirebaseRecyclerOptions.Builder<DataModel>()
+//                    .setQuery(query, DataModel.class)
+//                    .build();
+//
+//            farmerAdapter.updateOptions(filteredOptions);
+//        } else {
+//            farmerAdapter.updateOptions(options); // Reset to original options
+//        }
+        Query query = usersRef.orderByChild("farmername")
+                .startAt(searchQuery)
+                .endAt(searchQuery + "\uf8ff");
+
+        FirebaseRecyclerOptions<DataModel> filteroptions = new FirebaseRecyclerOptions.Builder<DataModel>()
+                .setQuery(query, DataModel.class)
+                .build();
+
+        farmerAdapter = new FarmerAdapter(filteroptions); // Create FarmerAdapter class below
+        recyclerView.setAdapter(farmerAdapter);
+        farmerAdapter.startListening();
+
+        farmerAdapter.setOnItemClickListener(new FarmerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(DataModel dataModel, int position) {
+                searchEditText.setText("");
+                Intent chatIntent = new Intent(getContext(), ChatActivity.class);
+                chatIntent.putExtra("selected_user_id", dataModel.getUserid()); // Assuming you have a 'getUid' method
+                chatIntent.putExtra("selected_user_name", dataModel.getFarmername());
+                startActivity(chatIntent);
+            }
+        });
     }
+
+
+    // ... onStop() with farmerAdapter.stopListening() ...
+
+    // ... Add item click handler here ...
 }

@@ -2,7 +2,15 @@ package com.example.farmerkonnect;
 
 public class DataModel {
 
-    String Farmername, Farmerage, Farmeraddress, Farmeremail, Farmsize, FarmLocation, Farmcrop, Farmcultivation, Farmworker, Farmlivestocks, Farmchannel, Farmergoal, Farmertech, Farmerinterest, FarmerChallenges;
+    String Farmername, Farmerage, Farmeraddress, Farmeremail, Farmsize, FarmLocation, Farmcrop, Farmcultivation, Farmworker, Farmlivestocks, Farmchannel, Farmergoal, Farmertech, Farmerinterest, FarmerChallenges,Userid;
+
+    public String getUserid() {
+        return Userid;
+    }
+
+    public void setUserid(String userid) {
+        Userid = userid;
+    }
 
     public String getFarmername() {
         return Farmername;
@@ -124,8 +132,9 @@ public class DataModel {
         FarmerChallenges = farmerChallenges;
     }
 
-    public DataModel(String farmername, String farmerage, String farmeraddress, String farmeremail, String farmsize, String farmLocation, String farmcrop, String farmcultivation, String farmworker, String farmlivestocks, String farmchannel, String farmergoal, String farmertech, String farmerinterest, String farmerChallenges) {
+    public DataModel(String farmername, String farmerage, String farmeraddress, String farmeremail, String farmsize, String farmLocation, String farmcrop, String farmcultivation, String farmworker, String farmlivestocks, String farmchannel, String farmergoal, String farmertech, String farmerinterest, String farmerChallenges,String userid) {
         Farmername = farmername;
+        Userid=userid;
         Farmerage = farmerage;
         Farmeraddress = farmeraddress;
         Farmeremail = farmeremail;

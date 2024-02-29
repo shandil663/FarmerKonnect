@@ -5,4 +5,6 @@
     <color name="fade">#F6F5F5</color>
     <color name="green">#43A047</color>
     <color name="yellow">#C0CA33</color>
+    <color name="msg">#dcf8c6</color>
+    <color name="bar">#128c7e</color>
 </resources>

@@ -33,10 +33,11 @@ public class Home extends AppCompatActivity {
             int itemId = item.getItemId();
             if (itemId == R.id.home) {
                 replaceFragment(new HomeFragment());
-            } else if (itemId == R.id.market) {
-                replaceFragment(new SchemeFragment());
-            } else if (itemId == R.id.user) {
+            }
+            else if (itemId == R.id.user) {
                 replaceFragment(new UserFargment());
+            }else if (itemId == R.id.market) {
+                replaceFragment(new SchemeFragment());
             }
             else if (itemId == R.id.chat) {
                 replaceFragment(new inbox());

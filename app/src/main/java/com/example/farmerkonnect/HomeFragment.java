@@ -69,7 +69,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-
+    RequestQueue queue;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-ImageView asbuttondetect,price;
+    ImageView asbuttondetect, price;
     TextView cityNameTextView, temperatureTextView, descriptionTextView, username;
     ImageView weatherIconImageView;
 
@@ -230,7 +230,7 @@ ImageView asbuttondetect,price;
 //                    }
 //                });
 
-//
+
 //        LocationRequest locationRequest = LocationRequest.create()
 //                .setInterval(10000)          // Update interval (optional - adjust as needed)
 //                .setFastestInterval(5000)    // Fastest desired interval (optional)
@@ -270,8 +270,8 @@ ImageView asbuttondetect,price;
                 if (location == null) {
                     Toast.makeText(getActivity(), "Cannot get location.", Toast.LENGTH_SHORT).show();
                 }
-                else{
-                    fetchWeatherData(location.getLatitude(), location.getLongitude());
+                else{if(isAdded()){
+                    fetchWeatherData(location.getLatitude(), location.getLongitude());}
                 }
             }
         });
@@ -286,16 +286,24 @@ ImageView asbuttondetect,price;
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
                     try {
-                        updateWeatherUI(response);
+                        if (isAdded()) { // Check if fragment is attached
+                            updateWeatherUI(response);
+                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                }, error -> Toast.makeText(getActivity(), "Weather data error", Toast.LENGTH_SHORT).show()
+                }, error -> {
+            if (isAdded()) {
+                Toast.makeText(getActivity(), "Weather data error", Toast.LENGTH_SHORT).show();
+            }
+        }
         );
 
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        queue = Volley.newRequestQueue(requireContext());
         queue.add(request);
     }
+
+
 
     private void updateWeatherUI(JSONObject response) throws JSONException {
         // ... (Process the JSON response and update the UI)
@@ -311,7 +319,6 @@ ImageView asbuttondetect,price;
         cityNameTextView.setText(cityName);
         temperatureTextView.setText(String.format("%.0f°C", temperature));
         descriptionTextView.setText(description);
-
         // Load weather icon (You'll likely want a way to map icon codes to image resources)
         // Example using Picasso library (You'll need to add the dependency in build.gradle)
         String urlhere = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
@@ -324,20 +331,20 @@ ImageView asbuttondetect,price;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-asbuttondetect=view.findViewById(R.id.detect);
-price=view.findViewById(R.id.price);
-price.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        startActivity(new Intent(getActivity().getApplicationContext(), Pricecheck.class));
-    }
-});
-asbuttondetect.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        startActivity(new Intent(getActivity(), Diseasesdetection.class));
-    }
-});
+        asbuttondetect = view.findViewById(R.id.detect);
+        price = view.findViewById(R.id.price);
+        price.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(requireContext(), Pricecheck.class));
+            }
+        });
+        asbuttondetect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Diseasesdetection.class));
+            }
+        });
         ImageSlider imageSlider = view.findViewById(R.id.imageslider);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.yojna1, ScaleTypes.FIT));
@@ -345,5 +352,13 @@ asbuttondetect.setOnClickListener(new View.OnClickListener() {
         slideModels.add(new SlideModel(R.drawable.yojn3, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.yojna2, ScaleTypes.FIT));
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (queue != null) {
+            queue.cancelAll(this); // Cancel requests on fragment stop
+        }
     }
 }

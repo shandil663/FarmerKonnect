@@ -82,6 +82,8 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private void startVerification(String phoneNumber) {
+
+
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(muth)
                         .setPhoneNumber(phoneNumber)
@@ -138,9 +140,9 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private void showOTPEntryUI() {
-//        phoneNumberEditText.setVisibility(View.GONE);
-//        cpp.setVisibility(View.GONE);
-//        getOTPButton.setVisibility(View.GONE);
+        phoneNumberEditText.setVisibility(View.GONE);
+        cpp.setVisibility(View.GONE);
+        getOTPButton.setVisibility(View.GONE);
 
         otpEditText.setVisibility(View.VISIBLE);
         verifyOTPButton.setVisibility(View.VISIBLE);
