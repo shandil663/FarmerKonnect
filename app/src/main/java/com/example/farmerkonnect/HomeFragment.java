@@ -1,6 +1,10 @@
 package com.example.farmerkonnect;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 
@@ -14,9 +18,13 @@ import androidx.fragment.app.Fragment;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -47,6 +55,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.CancellationToken;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.OnTokenCanceledListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -70,6 +79,20 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
     RequestQueue queue;
+    private Switch languageSwitch;
+    private SharedPreferences sharedPreferences;
+    BottomNavigationListener listener;
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            listener = (BottomNavigationListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement BottomNavigationListener");
+        }
+    }
+    private static final String PREFS_NAME = "myPreferences";
+    private static final String SWITCH_STATE = "switch_state";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -79,16 +102,20 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     ImageView asbuttondetect, price;
+    Button swt;
     TextView cityNameTextView, temperatureTextView, descriptionTextView, username;
-    ImageView weatherIconImageView;
+    ImageView weatherIconImageView,sch1,sch2,sch3;
+    TextView txt1,txt2,txt3,txt4,tx1,tx2,tx3,tx4,tx5,tx6,tx7,tx8,tx9,tx10;
 
     String forusername;
+
+    Switch aSwitch;
 
     LottieAnimationView lottieAnimationView;
 
     FirebaseAuth oth;
     FirebaseDatabase db;
-
+    BottomNavigationView bottomNavigationView;
 
     private final ActivityResultLauncher<String> requestLocationPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -149,8 +176,47 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
         username = rootView.findViewById(R.id.usernamehere);
+        sch1=rootView.findViewById(R.id.sch1);
+        sch2=rootView.findViewById(R.id.sch2);
+        sch3=rootView.findViewById(R.id.sch3);
+        txt1=rootView.findViewById(R.id.textView4);
+        txt2=rootView.findViewById(R.id.tools);
+        txt3=rootView.findViewById(R.id.gov);
+        txt4=rootView.findViewById(R.id.el);
+        tx1=rootView.findViewById(R.id.dis);
+        tx2=rootView.findViewById(R.id.gu);
+        tx3=rootView.findViewById(R.id.track);
+        tx4=rootView.findViewById(R.id.forum);
+        tx5=rootView.findViewById(R.id.el1);
+        tx6=rootView.findViewById(R.id.dis1);
+        tx7=rootView.findViewById(R.id.gu1);
+        tx8=rootView.findViewById(R.id.track1);
+        tx9=rootView.findViewById(R.id.forum1);
+        tx10=rootView.findViewById(R.id.el2);
         oth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+//        bottomNavigationView = rootView.findViewById(R.id.bottomview);
+        languageSwitch = rootView.findViewById(R.id.languageSwitch);
+        sharedPreferences = getActivity().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        boolean switchState = sharedPreferences.getBoolean(SWITCH_STATE, false); // Default to false if not found
+        if (switchState) {
+            performPunjabiOperation();
+        } else {
+            performEnglishOperation();
+        }
+        languageSwitch.setChecked(switchState);
+        languageSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // Code for Punjabi (On state)
+                performPunjabiOperation();
+            } else {
+                // Code for English (Off state)
+                performEnglishOperation();
+            }
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(SWITCH_STATE, isChecked);
+            editor.apply();
+        });
         DatabaseReference ref = db.getReference("FarmersInfo");
         ref.child(oth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -332,6 +398,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         asbuttondetect = view.findViewById(R.id.detect);
+
+
+
+
         price = view.findViewById(R.id.price);
         price.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -360,5 +430,71 @@ public class HomeFragment extends Fragment {
         if (queue != null) {
             queue.cancelAll(this); // Cancel requests on fragment stop
         }
+    }
+
+    private void performPunjabiOperation() {
+        txt1.setText(R.string.phello);
+        txt2.setText(R.string.ptool);
+        txt3.setText(R.string.pscheme);
+        txt4.setText(R.string.plearning);
+        tx1.setText(R.string.pdis);
+        tx2.setText(R.string.pguides);
+        tx3.setText(R.string.ptracker);
+        tx4.setText(R.string.pforum);
+        tx5.setText(R.string.plearning);
+        tx6.setText(R.string.pdis);
+        tx7.setText(R.string.pguides);
+        tx8.setText(R.string.ptracker);
+        tx9.setText(R.string.pforum);
+        tx10.setText(R.string.plearning);
+        sch1.setImageResource(R.drawable.yojnapun1);
+        sch2.setImageResource(R.drawable.yojnapun2);
+        sch3.setImageResource(R.drawable.yojnapun3);
+        BottomNavigationView bottomNavigationView = listener.getBottomNavigationView();
+        if (bottomNavigationView != null) {
+            Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(0); // Second item has index 1
+        menuItem.setTitle("ਮੁੱਖ ਪੰਨਾ");
+        MenuItem menuItem1 = menu.getItem(1);
+        menuItem1.setTitle("ਸੁਨੇਹਾ");
+        MenuItem menuItem2 = menu.getItem(2);
+        menuItem2.setTitle("ਸਬਜ਼ੀ ਮੰਡੀ");
+        MenuItem menuItem3 = menu.getItem(3);
+        menuItem3.setTitle("ਸਖਾਤਾ");}
+        languageSwitch.setText("Punjabi");
+        // Your Punjabi-specific operations here
+    }
+
+    private void performEnglishOperation() {
+        txt1.setText(R.string.hello);
+        txt2.setText(R.string.discover_tools);
+        txt3.setText(R.string.government_schemes);
+        txt4.setText(R.string.e_learning);
+        tx1.setText(R.string.disease_detection);
+        tx2.setText(R.string.farming_guides);
+        tx3.setText(R.string.price_tracker);
+        tx4.setText(R.string.community_forum);
+        tx5.setText(R.string.e_learning);
+        tx6.setText(R.string.disease_detection);
+        tx7.setText(R.string.farming_guides);
+        tx8.setText(R.string.price_tracker);
+        tx9.setText(R.string.community_forum);
+        tx10.setText(R.string.e_learning);
+        sch1.setImageResource(R.drawable.yojna4);
+        sch2.setImageResource(R.drawable.yojna1);
+        sch3.setImageResource(R.drawable.yojn3);
+        BottomNavigationView bottomNavigationView = listener.getBottomNavigationView();
+        if (bottomNavigationView != null) {
+            Menu menu = bottomNavigationView.getMenu();
+            MenuItem menuItem = menu.getItem(0); // Second item has index 1
+            menuItem.setTitle("Home");
+            MenuItem menuItem1 = menu.getItem(1);
+            menuItem1.setTitle("Inbox");
+            MenuItem menuItem2 = menu.getItem(2);
+            menuItem2.setTitle("Marketplace");
+            MenuItem menuItem3 = menu.getItem(3);
+            menuItem3.setTitle("Account");}
+        languageSwitch.setText("English");
+        // Your English-specific operations here
     }
 }

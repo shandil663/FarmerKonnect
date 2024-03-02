@@ -7,11 +7,10 @@
     android:background="@color/white"
     tools:context=".HomeFragment">
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5sp">
+        android:layout_marginTop="40dp">
 
         <TextView
             android:id="@+id/textView4"
@@ -31,13 +30,12 @@
             android:fontFamily="@font/poppins_bold"
             android:text="username"
             android:textSize="30sp" />
-
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="80dp"
         android:scrollbars="none">
 
@@ -124,6 +122,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tools"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15sp"
@@ -162,6 +161,7 @@
                                 android:src="@drawable/tool1" />
 
                             <TextView
+                                android:id="@+id/dis"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -184,6 +184,7 @@
                                 android:src="@drawable/tool2" />
 
                             <TextView
+                                android:id="@+id/gu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -207,6 +208,7 @@
                                 android:src="@drawable/tool3" />
 
                             <TextView
+                                android:id="@+id/track"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -229,6 +231,7 @@
                                 android:src="@drawable/tool4" />
 
                             <TextView
+                                android:id="@+id/forum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -250,6 +253,7 @@
                                 android:src="@drawable/tool5" />
 
                             <TextView
+                                android:id="@+id/el1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -266,6 +270,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/gov"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10sp"
@@ -332,6 +337,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/el"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10sp"
@@ -371,6 +377,7 @@
                                 android:src="@drawable/tool1" />
 
                             <TextView
+                                android:id="@+id/dis1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -393,6 +400,7 @@
                                 android:src="@drawable/tool2" />
 
                             <TextView
+                                android:id="@+id/gu1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -415,6 +423,7 @@
                                 android:src="@drawable/tool3" />
 
                             <TextView
+                                android:id="@+id/track1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -437,6 +446,7 @@
                                 android:src="@drawable/tool4" />
 
                             <TextView
+                                android:id="@+id/forum1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -458,6 +468,7 @@
                                 android:src="@drawable/tool5" />
 
                             <TextView
+                                android:id="@+id/el2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -474,4 +485,14 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <Switch
+        android:id="@+id/languageSwitch"
+        android:layout_gravity="end"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="English"
+        />
+
 </FrameLayout>

@@ -13,11 +13,12 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.farmerkonnect.databinding.ActivityHomeBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.color.DynamicColors;
 
 import java.util.ArrayList;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements BottomNavigationListener{
     ActivityHomeBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,4 +55,8 @@ public class Home extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    @Override
+    public BottomNavigationView getBottomNavigationView() {
+        return findViewById(R.id.bottomview);
     }
+}

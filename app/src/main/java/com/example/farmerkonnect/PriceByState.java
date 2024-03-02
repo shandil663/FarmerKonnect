@@ -40,7 +40,7 @@ public class PriceByState extends AppCompatActivity {
     private DatabaseReference pricesRef;
     private List<String> statesList;
     private Map<String, List<String>> districtsByState;
-    private List<String> cropsList;
+    private List<String> cropsList1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class PriceByState extends AppCompatActivity {
         pricesRef = FirebaseDatabase.getInstance().getReference("commodities");
         statesList = new ArrayList<>();
         districtsByState = new HashMap<>();
-        cropsList = new ArrayList<>();
+        cropsList1 = new ArrayList<>();
         cardphoto=findViewById(R.id.cardphoto);
 
         marketsRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -143,16 +143,16 @@ public class PriceByState extends AppCompatActivity {
     private void populateCrops() {
         // *** Fetch crops from Firebase or a local data source ***
         // Example (replace with your data):
-        cropsList.add("Rice");
-        cropsList.add("Wheat");
-        cropsList.add("Sugarcane");
-        cropsList.add("Tomato");
+        cropsList1.add("Rice");
+        cropsList1.add("Wheat");
+        cropsList1.add("Sugarcane");
+        cropsList1.add("Tomato");
 
 //        ArrayAdapter<String> cropsAdapter = new ArrayAdapter<>(this,
 //                android.R.layout.simple_spinner_item, cropsList);
 //        cropSpinner.setAdapter(cropsAdapter);
         Spinner spinner = findViewById(R.id.cropSpinner);
-        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, cropsList);
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, cropsList1);
         spinner.setAdapter(adapter);
     }
 

@@ -13,6 +13,14 @@
     <string name="farming_guides">Farming Guides</string>
     <string name="price_tracker">Price Tracker</string>
     <string name="community_forum">Community Forum</string>
+    <string name="phello">ਸਤ ਸ੍ਰੀ ਅਕਾਲ,</string>
+    <string name="ptool">ਸਹੂਲਤ</string>
+    <string name="pscheme">ਸਰਕਾਰੀ ਸਕੀਮਾਂ</string>
+    <string name="plearning">ਕੇਤੀ ਜਨਕਰੀ</string>
+    <string name="pdis">ਬਿਮਾਰੀ ਦੀ ਖੋਜ</string>
+    <string name="pguides">ਕਾਠੀਬਾੜੀ</string>
+    <string name="ptracker">ਕੀਮਤ ਦੀ ਜਾਂਚ</string>
+    <string name="pforum">ਮਦਦ ਡੈਸਕ</string>
     <string-array name="languages">
         <item>English</item>
         <item>Punjabi</item>
