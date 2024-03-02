@@ -1,64 +1,50 @@
 package com.example.farmerkonnect;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SchemeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.constraintlayout.helper.widget.Carousel;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+//import com.synnapps.carouselview.CarouselView;
+//import com.synnapps.carouselview.ImageListener;
+
+// ... other imports
+
 public class SchemeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public SchemeFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SchemeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SchemeFragment newInstance(String param1, String param2) {
-        SchemeFragment fragment = new SchemeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    private CarouselView carouselView;
+    private RecyclerView marketplaceRecyclerView;
+    // ... other variables
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_scheme, container, false);
+
+//        carouselView = view.findViewById(R.id.featuredCarousel);
+//        marketplaceRecyclerView = view.findViewById(R.id.marketplaceRecyclerView);
+//        // ... set up carousel (see below)
+//        // ... set up RecyclerView (see below)
+
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scheme, container, false);
-    }
-}
+    // ... other Fragment methods 
+
+//    private void setupCarousel() {
+//        int[] sampleImages = {R.drawable.image1, R.drawable.image2, R.drawable.image3}; // Replace with actual images
+//        carouselView.setPageCount(sampleImages.length);
+//        carouselView.setImageListener(imageListener); // See ImageListener below
+//    }
+//
+//    private void setupRecyclerView() {
+//        marketplaceRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2)); // 2 columns
+//        MarketplaceAdapter adapter = new MarketplaceAdapter( /* Your product data */);
+//        marketplaceRecyclerView.setAdapter(adapter);
+//    }
+//
+//    ImageListener imageListener = (position, imageView) -> imageView.setImageResource(sampleImages[position]);
+} 

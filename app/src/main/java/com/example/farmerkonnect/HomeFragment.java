@@ -336,7 +336,7 @@ public class HomeFragment extends Fragment {
         price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(requireContext(), Pricecheck.class));
+                startActivity(new Intent(requireContext(), PriceByState.class));
             }
         });
         asbuttondetect.setOnClickListener(new View.OnClickListener() {

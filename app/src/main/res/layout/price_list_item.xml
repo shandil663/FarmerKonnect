@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="170dp"
+    android:layout_height="100dp"
+    android:layout_weight="1"
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/fade"
+    app:cardCornerRadius="25dp" >
+    <TextView
+        android:id="@+id/marketName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Hello"
+        android:textStyle="bold" />
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/symbol"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹" />
+    <TextView
+        android:id="@+id/marketPrice"
+        android:fontFamily="@font/med"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello" />
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

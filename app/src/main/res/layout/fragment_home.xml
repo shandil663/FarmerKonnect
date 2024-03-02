@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15sp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Hello,"
+            android:text="@string/hello"
             android:textSize="30sp" />
 
 
@@ -29,8 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:fontFamily="@font/poppins_bold"
-            android:text=""
+            android:text="username"
             android:textSize="30sp" />
+
     </LinearLayout>
 
     <ScrollView
@@ -128,7 +129,7 @@
                 android:layout_marginStart="15sp"
                 android:fontFamily="@font/poppins_bold"
                 android:padding="10sp"
-                android:text="Discover Tools"
+                android:text="@string/discover_tools"
                 android:textSize="25sp" />
 
             <LinearLayout
@@ -165,7 +166,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Disease Detection"
+                                android:text="@string/disease_detection"
                                 android:textColor="@color/black" />
 
 
@@ -187,7 +188,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Farming Guides"
+                                android:text="@string/farming_guides"
                                 android:textColor="@color/black" />
 
 
@@ -210,7 +211,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Price Tracker"
+                                android:text="@string/price_tracker"
                                 android:textColor="@color/black" />
 
 
@@ -232,7 +233,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Community Forum"
+                                android:text="@string/community_forum"
                                 android:textColor="@color/black" />
 
                         </LinearLayout>
@@ -253,7 +254,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="E-Learning"
+                                android:text="@string/e_learning"
                                 android:textColor="@color/black" />
 
                         </LinearLayout>
@@ -270,7 +271,7 @@
                 android:layout_marginStart="10sp"
                 android:fontFamily="@font/poppins_bold"
                 android:padding="5sp"
-                android:text="Government Schemes"
+                android:text="@string/government_schemes"
                 android:textSize="25sp" />
 
             <LinearLayout
@@ -336,7 +337,7 @@
                 android:layout_marginStart="10sp"
                 android:fontFamily="@font/poppins_bold"
                 android:padding="10sp"
-                android:text="E-Learning"
+                android:text="@string/e_learning"
                 android:textSize="25sp" />
 
 
@@ -374,7 +375,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Disease Detection"
+                                android:text="@string/disease_detection"
                                 android:textColor="@color/black" />
 
 
@@ -396,7 +397,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Farming Guides"
+                                android:text="@string/farming_guides"
                                 android:textColor="@color/black" />
 
 
@@ -418,7 +419,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Price Tracker"
+                                android:text="@string/price_tracker"
                                 android:textColor="@color/black" />
 
 
@@ -440,7 +441,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="Community Forum"
+                                android:text="@string/community_forum"
                                 android:textColor="@color/black" />
 
                         </LinearLayout>
@@ -461,7 +462,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="E-Learning"
+                                android:text="@string/e_learning"
                                 android:textColor="@color/black" />
 
                         </LinearLayout>

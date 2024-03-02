@@ -48,7 +48,7 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
     implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
     implementation("org.tensorflow:tensorflow-lite-gpu:2.3.0")
-    implementation ("com.firebaseui:firebase-ui-database:8.0.2") // Or the version you need
+    implementation ("com.firebaseui:firebase-ui-database:8.0.2")
     implementation ("com.google.android.gms:play-services-location:21.1.0")
     implementation("com.google.firebase:firebase-storage:20.3.0")
     testImplementation("junit:junit:4.13.2")
