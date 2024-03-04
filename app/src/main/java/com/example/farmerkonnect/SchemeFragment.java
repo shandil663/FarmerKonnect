@@ -27,7 +27,7 @@ public class SchemeFragment extends Fragment {
         farmerCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), UploadCrops.class);
+                Intent intent = new Intent(getActivity(), farmerdashboard.class);
                 startActivity(intent);
             }
         });

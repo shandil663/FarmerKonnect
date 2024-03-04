@@ -183,6 +183,8 @@ public class UploadCrops extends AppCompatActivity {
         cropsRef.child(cropId).setValue(crop)
                 .addOnSuccessListener(unused -> {
                     Toast.makeText(this, "Upload Successful", Toast.LENGTH_SHORT).show();
+
+
                     // Optionally: Clear the form fields after a successful upload
                     clearFormFields();
                 })
