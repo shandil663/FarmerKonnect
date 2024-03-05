@@ -1,0 +1,20 @@
+Farmerkonnect
+Farmerkonnect is an Android application designed to empower Indian farmers with tools to improve their efficiency, market access, and crop health. The app is available in English and Punjabi to enhance accessibility.
+
+Key Features
+Direct Selling: Connect with consumers directly, bypassing intermediaries to improve pricing.
+Inventory Management: Track your crops, supplies, and sales.
+Weather Updates: Access real-time weather information from OpenWeatherAPI for informed decision-making.
+Farmer Community: Communicate with fellow farmers in your region for advice and support.
+Commodity Pricing: Check the latest market prices for crops from multiple Indian states using the data.gov.in API.
+Crop Disease Detection: Capture images of diseased leaves and get analysis for early intervention.
+Marketplace: Buy and sell agricultural supplies and equipment.
+
+Technologies
+Android Development: Built with Java in Android Studio.
+Database: Firebase for data storage and management.
+
+APIs:
+OpenWeatherAPI for weather data.
+data.gov.in for agricultural commodity pricing.
+Image Analysis: Tensorflowlite model for image recognition.
