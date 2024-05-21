@@ -1,15 +1,15 @@
 
-![Screenshot_20240503-174504_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/87dec493-b454-40bc-8abd-702bc7fc1017)
-![Screenshot_20240503-174113_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/52110afc-f21e-4947-b432-2744d02cd5b4)
-![Screenshot_20240503-174108_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/7ca83ee8-5602-418a-952b-1a3eb9cd12bb)
-![Screenshot_20240503-174055_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/12c2e77d-c889-45df-bd53-70e74848250d)
-![Screenshot_20240503-174049_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/53630f5e-5f73-4bd6-81d3-9d1a02fc6114)
-![Screenshot_20240503-174046_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/cd9f2b32-ef71-4a49-9dea-44dba11ef5bb)
-![Screenshot_20240503-174042_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/2d1a2c34-1ef7-47ef-a65d-dd3288c47bb4)
-![Screenshot_20240503-174035_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/5952e2cc-8d5d-467b-bc60-f6b354c65ea5)
-![Screenshot_20240503-174029_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/80067340-e0c9-4623-8286-1a42221163fe)
-![Screenshot_20240503-174023_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/abf3801d-a6aa-49f9-908f-2a6d51706daa)
 
+![Screenshot_20240503-174055_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/287240e0-8f57-4003-9bd0-07543a035f4f)
+![Screenshot_20240503-174049_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/dbe35681-0125-4c59-938c-dae4b21c98bf)
+![Screenshot_20240503-174046_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/6604a513-1e54-4d8c-b73d-df236addf959)
+![Screenshot_20240503-174042_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/c4aa904a-0197-4ca7-aad1-489f196ce8e9)
+![Screenshot_20240503-174035_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/0f0924cf-ae8b-4dab-b8a7-744b59f5f2a6)
+![Screenshot_20240503-174029_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/96285ac4-23d1-49b8-8c6c-1ae0c60333c1)
+![Screenshot_20240503-174023_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/69c7bfc1-5d39-42bc-8072-9150469e8d4d)
+![Screenshot_20240503-174504_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/b1904846-65c1-4462-afbd-78d9530c1a25)
+![Screenshot_20240503-174113_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/71f48981-c3ae-47ad-a1ee-060901a7da0a)
+![Screenshot_20240503-174108_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/44584c99-626f-454f-a02c-034c42349a07)
 
 Farmerkonnect
 Farmerkonnect is an Android application designed to empower Indian farmers with tools to improve their efficiency, market access, and crop health. The app is available in English and Punjabi to enhance accessibility.
