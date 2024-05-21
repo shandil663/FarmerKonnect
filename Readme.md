@@ -12,6 +12,7 @@
 ![Screenshot_20240503-174108_FarmerKonnect](https://github.com/shandil663/FarmerKonnect/assets/137873370/44584c99-626f-454f-a02c-034c42349a07)
 
 Farmerkonnect
+
 Farmerkonnect is an Android application designed to empower Indian farmers with tools to improve their efficiency, market access, and crop health. The app is available in English and Punjabi to enhance accessibility.
 
 Key Features
